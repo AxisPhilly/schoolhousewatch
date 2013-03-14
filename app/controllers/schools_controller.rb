@@ -13,7 +13,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1
   # GET /schools/1.json
   def show
-    @school = School.find(params[:id])
+    @school = School.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

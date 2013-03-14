@@ -1,6 +1,6 @@
 <section class="row">
   <div class="six columns">
-    <h1 class="headline">School Watch</h1>
+    <h1 class="headline">Closing School Watch</h1>
     <p>
       On XX/XX/XXXX, the School Reform commission voted to close 23 Philadelphia Public Schools. What happens next?
     </p>
@@ -26,15 +26,13 @@
             <tr>
               <th>Name</th>
               <th>Address</th>
-              <th>Foo</th>
             </tr>
           </thead>
 
           <% @schools.each do |school| %>
             <tr>
-              <td><%= school.name.titleize %></td>
+              <td><%= link_to school.name.titleize, '/schools/' + school.slug %></td>
               <td><%= school.address.titleize %></td>
-              <td><%= link_to 'Show', school %></td>
             </tr>
           <% end %>
 
@@ -50,10 +48,7 @@
       <ul>
         <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
         <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
-        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
-        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+        <li>The Notebook: <a href="http://thenotebook.org/blog/135734/src-votes-close-23-schools-spares-4" target="_blank">SRC votes to close 23 schools, spares 4</a>, 3/08/2013</li>
       </ul>
     </div>
 
@@ -61,11 +56,8 @@
       <h5>Resources</h5>
       <ul>
         <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Philadelphia-School-Closings.pdf">Pew: Shuttered Public Schools: The Struggle to Bring Old Buildings New Life</a>, 2/11/2013</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Philadelphia-School-Closings.pdf">Pew: Shuttered Public Schools: The Struggle to Bring Old Buildings New Life</a>, 2/11/2013</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Philadelphia-School-Closings.pdf">Pew: Shuttered Public Schools: The Struggle to Bring Old Buildings New Life</a>, 2/11/2013</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
+        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Pew: Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
+        <li><a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan">School District Facilities Master Plan</a>, 10/19/2011</li>
       </ul>
     </div>
 
@@ -75,3 +67,6 @@
     </div>
   </div>
 </section>
+<script type="text/javascript">
+    app.map.run();
+</script>
