@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: 
+  name: 
+  address: 
+  url: 
+  level: 
+  lat: 9.99
+  lng: 9.99
+  opa: 
+  mkt_val_2014: 
+
+two:
+  code: 
+  name: 
+  address: 
+  url: 
+  level: 
+  lat: 9.99
+  lng: 9.99
+  opa: 
+  mkt_val_2014: 
