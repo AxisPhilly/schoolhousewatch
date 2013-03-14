@@ -11,3 +11,4 @@
 // GO AFTER THE REQUIRES BELOW.
 // = require schools
 // = require leaflet
+// = require wax.leaf

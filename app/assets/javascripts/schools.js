@@ -5,16 +5,26 @@ if (typeof app === 'undefined' || !app) {
 app.map = {};
 
 app.map.run = function() {
-  // create a map in the "map" div, set the view to a given place and zoom
-  var map = L.map('map').setView([51.505, -0.09], 13);
+  wax.tilejson('http://a.tiles.mapbox.com/v3/axisphilly.map-fg6flibn.jsonp',
+    function(tilejson) {
+      var map = new L.Map('map')
+        .addLayer(new wax.leaf.connector(tilejson))
+        .setView(new L.LatLng(39.98, -75.15), 11);
 
-  // add an OpenStreetMap tile layer
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+      wax.leaf.interaction()
+        .map(map)
+        .tilejson(tilejson)
+        .on('on', function(o) {});
 
-  // add a marker in the given location, attach some popup content to it and open the popup
-  L.marker([51.5, -0.09]).addTo(map)
-      .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-      .openPopup();
+      //add points to map
+      $.ajax({
+        url: '/schools.json',
+        success: function(res) {
+          for(var i=0; i<res.length; i++) {
+            console.log(res[i].lng);
+            var point = new L.marker([res[i].lat, res[i].lng]).addTo(map);
+          }
+        }
+      });
+  });
 };
