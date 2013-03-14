@@ -5,19 +5,24 @@
 <section class="row">
   <div class="six columns">
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      On XX/XX/XXXX, the School Reform commission voted to close 23 Philadelphia Public Schools. What happens next?
+    </p>
+    <p>
+      This project will track news for each of the closing schools as the district moves to close them at the end
+      of the school year. Each school has its own page, where you can find news about that school, as well as a forum for community input into what the City should do with the school.
+    </p>
+    <p>
+      Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
     </p>
 
     <dl class="tabs">
-      <dd class="active"><a href="#list">School Closing List</a></dd>
-      <dd><a href="#map">Map</a></dd>
+      <dd><a href="#list">School Closing List</a></dd>
+      <dd class="activeTab"><a href="#mapContainer">Map</a></dd>
     </dl>
     <ul class="tabs-content">
+      <li id="mapContainerTab">
+        <div id="map"></div>
+      </li>
       <li class="active" id="listTab">
         <table class="twelve">
           <thead>
@@ -38,7 +43,6 @@
 
         </table>
       </li>
-      <li id="mapTab">This is simple tab 2s content. Now you see it!</li>
     </ul>
 
   </div>
@@ -47,7 +51,9 @@
     <div id="news">
       <h4>Recent News</h4>
       <ul>
-        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+      </ul>
     </div>
 
     <div id="resources">
