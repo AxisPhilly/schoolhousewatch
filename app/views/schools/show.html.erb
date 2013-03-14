@@ -1,50 +1,40 @@
-<p id="notice"><%= notice %></p>
+<section class="row">
+  <div class="three columns">
+    <img src="http://placehold.it/350x300"/>
+    <h5><%= @school.name %></h5>
+    <ul>
+      <li>
+        <%= @school.address %>
+      </li>
+      <li>
+        <% if @school.url? %>
+          <%= @school.url %>
+        <% end %>
+      </li>
+      <li>
+        <%= @school.level.titleize %>
+      </li>
+      <li>
+        OPA Account:
+        <%= @school.opa %>
+      </li>
+      <li>
+        <% if @school.mkt_val_2014 != -1 %>
+          2014 Market Value: <%= number_to_currency(@school.mkt_val_2014, :precision => 0) %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 
-<p>
-  <b>Code:</b>
-  <%= @school.code %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @school.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @school.address %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @school.url %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%= @school.level %>
-</p>
-
-<p>
-  <b>Lat:</b>
-  <%= @school.lat %>
-</p>
-
-<p>
-  <b>Lng:</b>
-  <%= @school.lng %>
-</p>
-
-<p>
-  <b>Opa:</b>
-  <%= @school.opa %>
-</p>
-
-<p>
-  <b>Mkt val 2014:</b>
-  <%= @school.mkt_val_2014 %>
-</p>
-
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+  <div class="nine columns">
+    <h5>Recent New</h5>
+    <ul>
+      <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+    </ul>
+  </div>
+</section>
