@@ -16,6 +16,7 @@ namespace :db do
       school.lng = row["lng"]
       school.opa = row["opa"]
       school.mkt_val_2014 = row["mkt_val_2014"]
+      school.slug = row["slug"]
       school.save
 
       puts school
