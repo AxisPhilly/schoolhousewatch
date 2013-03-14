@@ -1,10 +1,8 @@
 SchoolWatch::Application.routes.draw do
   resources :schools
-
-
   get "home/index"
 
-  root :to => "home#index"
+  root :to => "schools#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
