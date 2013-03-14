@@ -1,39 +1,66 @@
-<h1>Listing schools</h1>
+<section class="row">
+  <h2 class="headline twelve columns">School Watch</h2>
+</section>
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Url</th>
-    <th>Level</th>
-    <th>Lat</th>
-    <th>Lng</th>
-    <th>Opa</th>
-    <th>Mkt val 2014</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<section class="row">
+  <div class="six columns">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
 
-<% @schools.each do |school| %>
-  <tr>
-    <td><%= school.code %></td>
-    <td><%= school.name %></td>
-    <td><%= school.address %></td>
-    <td><%= school.url %></td>
-    <td><%= school.level %></td>
-    <td><%= school.lat %></td>
-    <td><%= school.lng %></td>
-    <td><%= school.opa %></td>
-    <td><%= school.mkt_val_2014 %></td>
-    <td><%= link_to 'Show', school %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <dl class="tabs">
+      <dd class="active"><a href="#list">School Closing List</a></dd>
+      <dd><a href="#map">Map</a></dd>
+    </dl>
+    <ul class="tabs-content">
+      <li class="active" id="listTab">
+        <table class="twelve">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Foo</th>
+            </tr>
+          </thead>
 
-<br />
+          <% @schools.each do |school| %>
+            <tr>
+              <td><%= school.name.titleize %></td>
+              <td><%= school.address.titleize %></td>
+              <td><%= link_to 'Show', school %></td>
+            </tr>
+          <% end %>
 
-<%= link_to 'New School', new_school_path %>
+        </table>
+      </li>
+      <li id="mapTab">This is simple tab 2s content. Now you see it!</li>
+    </ul>
+
+  </div>
+
+  <div class="six columns">
+    <div id="news">
+      <h4>Recent News</h4>
+      <ul>
+        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property">What should become of the Germantown High School property?</a>, 3/11/2013</li>
+    </div>
+
+    <div id="resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Philadelphia-School-Closings.pdf">Pew: Shuttered Public Schools: The Struggle to Bring Old Buildings New Life</a>, 2/11/2013</li>
+        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
+      </ul>
+    </div>
+
+    <div id="data-sources">
+      <h6>Data Sources</h6>
+      <p>School location and demographic information is available as part of the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative">Open Data Initiative</a>. The listing of schools to be closed can be found on the School District's <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan">Facilities Master Plan</a>.
+    </div>
+  </div>
+</section>
