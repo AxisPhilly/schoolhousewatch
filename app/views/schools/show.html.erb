@@ -1,4 +1,11 @@
 <section class="row">
+  <ul class="breadcrumbs">
+    <li><a href="/">School Watch</a></li>
+    <li class="current"><a href="#"><%= @school.name.titleize %></a></li>
+  </ul>
+</section>
+
+<section class="row">
   <div class="three columns">
     <img src="http://placehold.it/350x300"/>
     <h5><%= @school.name %></h5>
