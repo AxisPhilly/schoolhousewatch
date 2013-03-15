@@ -12,7 +12,11 @@ body {
 }
 
 #map-div {
-  height: 450px;
+  height: 525px;
   width: 90%;
   margin: 0 auto;
+}
+
+.leaflet-top {
+  z-index: 100;
 }
