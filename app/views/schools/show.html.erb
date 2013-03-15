@@ -30,12 +30,13 @@
     <div id="news">
       <h5>Recent News</h5>
       <ul>
-        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-          <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
-          <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-          <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
-          <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-          <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
+        <% if @news.length != 0 %>
+          <% @news.each do |story| %>
+            <li><%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+          <% end %>
+        <% else %>
+          We haven't found any stories about <%= @school.name.titleize %>. Have you seen any? Submit them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>, or mention them in the comments below.
+        <% end %>
       </ul>
     </div>
 
