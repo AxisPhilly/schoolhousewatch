@@ -44,16 +44,16 @@
     <div id="news">
       <h5>Recent News</h5>
         <% @news.each do |story| %>
-            <li><%= story[1] %>: <a href="<%= story[2] %>"><%= story[0] %></a></li>
+          <li><%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
         <% end %>
     </div>
 
     <div id="resources">
       <h5>Resources</h5>
       <ul>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Philadelphia-School-Closings.pdf">Pew: Shuttered Public Schools: The Struggle to Bring Old Buildings New Life</a>, 2/11/2013</li>
-        <li><a href="http://www.pewtrusts.org/uploadedFiles/wwwpewtrustsorg/Reports/Philadelphia_Research_Initiative/Closing-Public-Schools-Philadelphia.pdf">Pew: Closing Public Schools in Philadelphia: Lessons from Six Urban Districts</a>, 10/19/2011</li>
-        <li><a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan">School District Facilities Master Plan</a></li>
+        <% @resources.each do |story| %>
+          <li><% if story['source'] != '' %> <%= story['source'] %>: <% end %> <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+        <% end %>
       </ul>
     </div>
 

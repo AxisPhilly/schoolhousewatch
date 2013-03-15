@@ -5,6 +5,7 @@ class SchoolsController < ApplicationController
     @schools = School.all
     @title = "School Watch"
     @news = get_all_news
+    @resources = get_all_resources
 
     respond_to do |format|
       format.html # index.html.erb
