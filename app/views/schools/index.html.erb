@@ -10,6 +10,27 @@
     <p>
       Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
     </p>
+
+    <div id="news">
+      <h5>Recent News</h5>
+        <% @news.each do |story| %>
+          <li>
+            <%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+          </li>
+        <% end %>
+    </div>
+
+    <div id="resources">
+      <h5>Resources</h5>
+      <ul>
+        <% @resources.each do |story| %>
+          <li><% if story['source'] != '' %> <%= story['source'] %>: <% end %> <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="six columns">
     <dl class="tabs">
       <dd class="active"><a href="#map">Map</a></dd>
       <dd><a href="#list">List</a></dd>
@@ -37,26 +58,6 @@
         </table>
       </li>
     </ul>
-  </div>
-
-  <div class="six columns">
-    <div id="news">
-      <h5>Recent News</h5>
-        <% @news.each do |story| %>
-          <li>
-            <%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-          </li>
-        <% end %>
-    </div>
-
-    <div id="resources">
-      <h5>Resources</h5>
-      <ul>
-        <% @resources.each do |story| %>
-          <li><% if story['source'] != '' %> <%= story['source'] %>: <% end %> <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
-        <% end %>
-      </ul>
-    </div>
 
     <div id="data-sources">
       <h6>Data Sources</h6>
