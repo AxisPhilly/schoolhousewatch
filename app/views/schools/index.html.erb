@@ -2,11 +2,10 @@
   <div class="six columns">
     <h1 class="headline">School Watch</h1>
     <p>
-      On March 7th, the School Reform commission voted to close 23 Philadelphia Public Schools. What happens next to these buildings?
+      On March 7th, the School Reform commission voted to close 23 Philadelphia Public Schools. What will happen next to these buildings?
     </p>
     <p>
-      This project will track news for each of the closing schools as the district moves to close them at the end
-      of the school year. Each school has its own page, where you can find news about that school, as well as a forum for community input into what the City should do with the school.
+      This project tracks news stories and community events for each of the closing schools, as well as provides a community forum for resue ideas.
     </p>
     <p>
       Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
@@ -44,7 +43,9 @@
     <div id="news">
       <h5>Recent News</h5>
         <% @news.each do |story| %>
-          <li><%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+          <li>
+            <%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+          </li>
         <% end %>
     </div>
 
