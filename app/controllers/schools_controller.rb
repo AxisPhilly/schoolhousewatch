@@ -4,6 +4,7 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
     @title = "School Watch"
+    @news = get_all_news
 
     respond_to do |format|
       format.html # index.html.erb
