@@ -3,6 +3,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+    @title = "School Watch"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1.json
   def show
     @school = School.find_by_slug(params[:id])
+    @title = @school.name.titleize + " | School Watch"
 
     respond_to do |format|
       format.html # show.html.erb
