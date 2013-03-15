@@ -23,7 +23,7 @@ app.map.run = function() {
           L.geoJson(res, {
             style:  {
               "color": "#ff7800",
-              "weight": 5,
+              "weight": 3,
               "opacity": 0.65
             }
           }).addTo(map);
