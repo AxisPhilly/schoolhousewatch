@@ -11,14 +11,13 @@
     <p>
       Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
     </p>
-
     <dl class="tabs">
-      <dd class="active"><a href="#mapContainer">Map</a></dd>
+      <dd class="active"><a href="#map">Map</a></dd>
       <dd><a href="#list">List</a></dd>
     </dl>
     <ul class="tabs-content">
-      <li class="active" id="mapContainerTab">
-        <div id="map"></div>
+      <li class="active" id="mapTab">
+        <div id="map-div"></div>
       </li>
       <li id="listTab">
         <table class="twelve">
@@ -44,11 +43,9 @@
   <div class="six columns">
     <div id="news">
       <h5>Recent News</h5>
-      <ul>
-        <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
-        <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
-        <li>The Notebook: <a href="http://thenotebook.org/blog/135734/src-votes-close-23-schools-spares-4" target="_blank">SRC votes to close 23 schools, spares 4</a>, 3/08/2013</li>
-      </ul>
+        <% @news.each do |story| %>
+            <li><%= story[1] %>: <a href="<%= story[2] %>"><%= story[0] %></a></li>
+        <% end %>
     </div>
 
     <div id="resources">

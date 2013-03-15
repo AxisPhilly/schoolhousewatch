@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 #data-sources {
   padding: 2px 16px;
   background-color: #F0F0F0;
 }
 
-#map {
+#map-div {
   height: 450px;
   width: 90%;
   margin: 0 auto;

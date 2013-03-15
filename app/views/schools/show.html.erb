@@ -6,11 +6,11 @@
       <li>
         <%= @school.address %>
       </li>
-      <li>
         <% if @school.url? %>
-          <%= link_to 'School Website', @school.url %>
+          <li>
+            <%= link_to 'School Website', @school.url %>
+          </li>
         <% end %>
-      </li>
       <li>
         <%= @school.level.titleize %>
       </li>
@@ -28,7 +28,7 @@
 
   <div class="nine columns">
     <div id="news">
-      <h5>Recent New</h5>
+      <h5>Recent News</h5>
       <ul>
         <li>NewsWorks: <a href="http://www.newsworks.org/index.php/the-feed/item/52119-what-should-become-of-the-germantown-high-school-property" target="_blank">What should become of the Germantown High School property?</a>, 3/11/2013</li>
           <li>AxisPhilly: <a href="http://axisphilly.org/article/city-officials-look-toward-next-uses-for-shuttered-school-buildings/" target="_blank">City officials look toward next uses for shuttered school buildings</a>, 3/13/2013</li>
@@ -39,8 +39,9 @@
       </ul>
     </div>
 
-    <div id="disqus_thread">
-
+    <div id="comments">
+      <h5>Have ideas for reuse? Comment below</h5>
+      <div id="disqus_thread"></div>
     </div>
   </div>
 </section>
