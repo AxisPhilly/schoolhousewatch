@@ -40,7 +40,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1/edit
   def edit
-    @school = School.find(params[:id])
+    @school = School.find_by_slug(params[:id])
   end
 
   # POST /schools
