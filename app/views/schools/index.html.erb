@@ -16,7 +16,7 @@
         <% @news.each do |story| %>
           <li>
             <%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-            <% if story['school'] != '' %>
+            <% unless story['school'].empty? %>
               <span class="radius label"><a href="schools/<%= story['school'] %>"><%= story['school'].titleize %></a></span>
             <% end %>
           </li>

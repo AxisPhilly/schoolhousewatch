@@ -8,11 +8,11 @@ module ApplicationHelper
       #date = Date.strptime(row[3], '%m/%d/%Y')
 
       {
-        headers[0] => row[0],
-        headers[1] => row[1],
-        headers[2] => row[2],
-        headers[3] => row[3],
-        headers[4] => row[4]
+        headers[0].downcase => row[0],
+        headers[1].downcase => row[1],
+        headers[2].downcase => row[2],
+        headers[3].downcase => row[3],
+        headers[4].downcase => row[4]
       }
     }
 
