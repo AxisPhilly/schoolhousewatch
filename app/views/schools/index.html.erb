@@ -13,21 +13,27 @@
 
     <div id="news">
       <h5>Recent News</h5>
+        <ul>
         <% @news.each do |story| %>
           <li>
-            <%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+            <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+            <em class="source"><% if story['source'] != '' %> <%= story['source'] %>, <% end %> <%= story['date'] %></em>
             <% unless story['school'].empty? %>
               <span class="radius label"><a href="schools/<%= story['school'] %>"><%= story['school'].titleize %></a></span>
             <% end %>
           </li>
         <% end %>
+        </ul>
     </div>
 
     <div id="resources">
       <h5>Resources</h5>
       <ul>
         <% @resources.each do |story| %>
-          <li><% if story['source'] != '' %> <%= story['source'] %>: <% end %> <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+          <li>
+            <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+            <em class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></em>
+          </li>
         <% end %>
       </ul>
     </div>

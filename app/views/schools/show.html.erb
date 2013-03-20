@@ -19,7 +19,7 @@
       </li>
         <% if @school.url? %>
           <li>
-            <%= link_to 'School Website', @school.url %>
+            <%= link_to 'Website', @school.url %>
           </li>
         <% end %>
       <li>
@@ -37,11 +37,14 @@
     </ul>
     
     <div id="news">
-      <h5>Recent News</h5>
+      <h6>Recent News</h6>
       <ul>
         <% if @news.length != 0 %>
           <% @news.each do |story| %>
-            <li><%= story['source'] %>: <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a></li>
+            <li>
+              <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+              <em class="source"><%= story['source'] %>, <%= story['date'] %></em>
+            </li>
           <% end %>
         <% else %>
           We haven't found any stories about <%= @school.name.titleize %>. Have you seen any? Submit them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>, or mention them in the comments.
