@@ -3,11 +3,16 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
-  def get_all_news
-    gsession = GoogleDrive.login(ENV["GOOGLE_DRIVE_EMAIL"], ENV["GOOGLE_DRIVE_PASSWORD"])
-    sheet = gsession.spreadsheet_by_key("0AsiZZJ_cOXiMdEhTVnNGblVYTDBBU1BpQkVxQ09vdVE").worksheets[0]
+  def get_axisphilly_news
+    feed = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
 
-    stories = gsheet_to_hash(sheet)
+    feed
+  end
+
+   def get_other_news
+    feed = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/?post_type=external_post")
+
+    feed
   end
 
   def get_all_resources

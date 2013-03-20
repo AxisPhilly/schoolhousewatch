@@ -11,23 +11,32 @@
       Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
     </p>
 
-    <div id="news">
-      <h5>Recent News</h5>
+    <div id="axis-news">
+      <h6>News from AxisPhilly</h6>
         <ul>
-        <% @news.each do |story| %>
+        <% @axp_news.entries.each do |story| %>
           <li>
-            <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-            <em class="source"><% if story['source'] != '' %> <%= story['source'] %>, <% end %> <%= story['date'] %></em>
-            <% unless story['school'].empty? %>
-              <span class="radius label"><a href="schools/<%= story['school'] %>"><%= story['school'].titleize %></a></span>
-            <% end %>
+            <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
+            <em class="source"><%= story.published.strftime('%b. %w, %Y') %></em>
+          </li>
+        <% end %>
+        </ul>
+    </div>
+
+    <div id="other-news">
+      <h6>News from other organizations</h6>
+        <ul>
+        <% @other_news.entries.each do |story| %>
+          <li>
+            <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
+            <em class="source"><%= story.published.strftime('%b. %w, %Y') %></em>
           </li>
         <% end %>
         </ul>
     </div>
 
     <div id="resources">
-      <h5>Resources</h5>
+      <h6>Resources</h6>
       <ul>
         <% @resources.each do |story| %>
           <li>

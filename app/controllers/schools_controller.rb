@@ -4,7 +4,8 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
     @title = "School Watch"
-    @news = get_all_news
+    @axp_news = get_axisphilly_news
+    @other_news = get_other_news
     @resources = get_all_resources
 
     respond_to do |format|

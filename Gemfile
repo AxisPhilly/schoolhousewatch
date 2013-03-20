@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'activerecord-postgresql-adapter'
 gem 'google_drive'
+gem 'feedzirra', '>= 0.2.0.rc2'
 
 gem 'carrierwave'
 # To use ActiveModel has_secure_password
