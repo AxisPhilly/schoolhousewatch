@@ -20,10 +20,6 @@ Don't forget to load the variables by `source`
 
     $ source .env
 
-You may need to install the sqlite gem. Don't add this to the Gemfile. Heroku doesn't like to see sqlite hanging around.
-
-    $ gem install sqlite3
-
 Set up the database:
 
     $ rake db:create
