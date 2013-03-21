@@ -6,12 +6,8 @@
 </section>
 
 <section class="row">
-  <div class="three columns">
-    <% if @school.school_image.present? %>
-      <% image_tag(@school.school_image_url, :width => 350) %>
-    <% else %>
-      <img src="http://placehold.it/350x300"/>
-    <% end %>
+  <div class="five columns">
+    <%= @school.street_view.html_safe %>
     <h5><%= @school.name %></h5>
     <ul>
       <li>
@@ -37,23 +33,11 @@
     </ul>
     
     <div id="news">
-      <h6>Recent News</h6>
-      <ul>
-        <% if @news.length != 0 %>
-          <% @news.each do |story| %>
-            <li>
-              <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-              <em class="source"><%= story['source'] %>, <%= story['date'] %></em>
-            </li>
-          <% end %>
-        <% else %>
-          We haven't found any stories about <%= @school.name.titleize %>. Have you seen any? Submit them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>, or mention them in the comments.
-        <% end %>
-      </ul>
+      
     </div>
   </div>
 
-  <div class="nine columns">
+  <div class="seven columns">
     <div id="comments">
       <h5>Have ideas for reuse? Comment below</h5>
       <div id="disqus_thread"></div>

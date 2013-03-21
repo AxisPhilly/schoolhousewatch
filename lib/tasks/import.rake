@@ -5,7 +5,7 @@ namespace :db do
   task :import => :environment do
     School.delete_all
     
-    CSV.foreach("#{Rails.root.to_s}/lib/assets/schools.csv", :headers => true) do |row|
+    CSV.foreach("#{Rails.root.to_s}/lib/assets/schools.csv", {:headers => true, :col_sep => "\|"}) do |row|
       school = School.new
       school.code = row["school_code"]
       school.name = row["school_name"]
@@ -17,6 +17,7 @@ namespace :db do
       school.opa = row["opa"]
       school.mkt_val_2014 = row["mkt_val_2014"]
       school.slug = row["slug"]
+      school.street_view = row["street_view"]
       school.save
 
       puts school
