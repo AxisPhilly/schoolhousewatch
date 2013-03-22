@@ -53,8 +53,10 @@
 
 <script type="text/javascript">
   // Disqus stuff
-  /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
-  var disqus_shortname = 'axisphilly'; // Required - Replace example with your forum shortname
+  var disqus_shortname = 'axisphilly';
+  var disqus_title = '<%= @title %>';
+  var disqus_url = '<%= request.url %>';
+  var disqus_identifier = 'axisphilly-<%= @school.name.gsub(" ", "").downcase %>' 
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
