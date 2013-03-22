@@ -3,9 +3,9 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
-    @title = "School Watch"
-    @axp_news = get_axisphilly_news
-    @other_news = get_other_news
+    @title = "Schoolhouse Watch"
+    @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
+    @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/?post_type=external_post")
     @resources = get_all_resources
 
     respond_to do |format|
@@ -18,7 +18,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1.json
   def show
     @school = School.find_by_slug(params[:id])
-    @title = @school.name.titleize + " | School Watch"
+    @title = @school.name.titleize + " | Schoolhouse Watch"
 
     @news = get_axisphilly_news
 
