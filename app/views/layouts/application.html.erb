@@ -69,6 +69,10 @@
                 <li class="social"><a href="http://www.twitter.com/AxisPhilly"><i class="social-foundicon-twitter"></i></a></li>
                 <li class="social"><a href="http://www.facebook.com/AxisPhilly"><i class="social-foundicon-facebook"></i></a></li>
                 <li class="social"><a href="http://www.axisphilly.org/?feed=rss"><i class="social-foundicon-rss"></i></a></li>
+                              <% if user_signed_in? %>
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <% end %>
               </ul>
               <ul class="right">
                 <li class="search">
@@ -83,8 +87,13 @@
       </div>
     </div>
     </header>
-
-    <%= yield %>
+    <section class="row">
+      <div class="six columns">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </section>
 
     <footer>
       <div class="row colors">

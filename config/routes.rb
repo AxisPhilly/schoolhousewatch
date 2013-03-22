@@ -1,4 +1,6 @@
 SchoolWatch::Application.routes.draw do
+  devise_for :users
+
   resources :schools
   get "home/index"
 

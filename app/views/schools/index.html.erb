@@ -1,88 +1,85 @@
-<section class="row">
-  <div class="six columns">
-    <h1 class="headline"><%= @title %></h1>
-    <p>
-      On March 7th, the School Reform commission voted to close 23 Philadelphia Public Schools. What will happen next to these buildings?
-    </p>
-    <p>
-      This project tracks news stories and community events for each of the closing schools, as well as provides a community forum for resue ideas.
-    </p>
-    <p>
-      Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
-    </p>
+<h1 class="headline"><%= @title %></h1>
+<p>
+  On March 7th, the School Reform commission voted to close 23 Philadelphia Public Schools. What will happen next to these buildings?
+</p>
+<p>
+  This project tracks news stories and community events for each of the closing schools, as well as provides a community forum for resue ideas.
+</p>
+<p>
+  Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
+</p>
 
-    <div id="axis-news">
-      <h6>News from AxisPhilly</h6>
-        <ul>
-        <% @axp_news.entries.each do |story| %>
-          <li>
-            <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
-            <em class="source"><%= story.published.strftime('%b. %w, %Y') %></em>
-          </li>
-        <% end %>
-        </ul>
-    </div>
-
-    <div id="other-news">
-      <h6>News from other organizations</h6>
-        <ul>
-        <% @other_news.entries.each do |story| %>
-          <li>
-            <a href="<%# story.source_url %>" target="_blank"><%= story.title %></a>
-            <em class="source"><%# story.source %>, <%= story.published.strftime('%b. %w, %Y') %></em>
-          </li>
-        <% end %>
-        </ul>
-    </div>
-
-    <div id="resources">
-      <h6>Resources</h6>
-      <ul>
-        <% @resources.each do |story| %>
-          <li>
-            <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-            <em class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></em>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <div class="six columns">
-    <dl class="tabs">
-      <dd class="active"><a href="#list">List</a></dd>
-      <dd><a href="#map">Map</a></dd>
-    </dl>
-    <ul class="tabs-content">
-      <li id="mapTab">
-        <div id="map-div"></div>
+<div id="axis-news">
+  <h6>News from AxisPhilly</h6>
+    <ul>
+    <% @axp_news.entries.each do |story| %>
+      <li>
+        <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
+        <em class="source"><%= story.published.strftime('%b. %w, %Y') %></em>
       </li>
-      <li class="active" id="listTab">
-        <table class="twelve">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-
-          <% @schools.each do |school| %>
-            <tr>
-              <td><%= link_to school.name.titleize, '/schools/' + school.slug %></td>
-              <td><%= school.address.titleize %></td>
-            </tr>
-          <% end %>
-
-        </table>
-      </li>
+    <% end %>
     </ul>
+</div>
 
-    <div id="data-sources">
-      <h6>Data Sources</h6>
-      <p>School location and demographic information is available as part of the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative" target="_blank">Open Data Initiative</a>. The listing of schools to be closed can be found on the School District's <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan" target="_blank">Facilities Master Plan</a>.
-    </div>
-  </div>
-</section>
+<div id="other-news">
+  <h6>News from other organizations</h6>
+    <ul>
+    <% @other_news.entries.each do |story| %>
+      <li>
+        <a href="<%# story.source_url %>" target="_blank"><%= story.title %></a>
+        <em class="source"><%# story.source %>, <%= story.published.strftime('%b. %w, %Y') %></em>
+      </li>
+    <% end %>
+    </ul>
+</div>
+
+<div id="resources">
+  <h6>Resources</h6>
+  <ul>
+    <% @resources.each do |story| %>
+      <li>
+        <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+        <em class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></em>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</div>
+
+<div class="six columns">
+<dl class="tabs">
+  <dd class="active"><a href="#list">List</a></dd>
+  <dd><a href="#map">Map</a></dd>
+</dl>
+<ul class="tabs-content">
+  <li id="mapTab">
+    <div id="map-div"></div>
+  </li>
+  <li class="active" id="listTab">
+    <table class="twelve">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+
+      <% @schools.each do |school| %>
+        <tr>
+          <td><%= link_to school.name.titleize, '/schools/' + school.slug %></td>
+          <td><%= school.address.titleize %></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </li>
+</ul>
+
+<div id="data-sources">
+  <h6>Data Sources</h6>
+  <p>School location and demographic information is available as part of the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative" target="_blank">Open Data Initiative</a>. The listing of schools to be closed can be found on the School District's <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan" target="_blank">Facilities Master Plan</a>.
+</div>
+
 <script type="text/javascript">
-  app.map.run();
+app.map.run();
 </script>
