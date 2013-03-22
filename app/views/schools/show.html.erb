@@ -7,7 +7,11 @@
 
 <section class="row">
   <div class="five columns">
-    <%= @school.street_view.html_safe %>
+    <% if @school.school_image.present? %>
+      <% image_tag(@school.school_image_url, :width => 350) %>
+    <% else %>
+      <%= @school.street_view.html_safe %>
+    <% end %>
     <h5><%= @school.name %></h5>
     <ul>
       <li>
@@ -28,6 +32,8 @@
       <li>
         <% if @school.mkt_val_2014 != -1 %>
           2014 Market Value: <%= number_to_currency(@school.mkt_val_2014, :precision => 0) %>
+        <% else %>
+          This property has not yet been reassessed under AVI.
         <% end %>
       </li>
     </ul>
