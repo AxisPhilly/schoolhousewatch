@@ -13,6 +13,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+  gem 'rake'
+end
+
 gem 'jquery-rails'
 
 gem 'pg'
@@ -21,6 +25,7 @@ gem 'google_drive'
 gem 'feedzirra', '>= 0.2.0.rc2'
 
 gem 'carrierwave'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
