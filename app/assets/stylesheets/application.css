@@ -12,3 +12,7 @@
  *= require leaflet
  *= require schools
  */
+
+.notice, .alert { border-radius: 4px; font-weight: bold; margin: 0; padding-left: 10px;}
+.alert { background: rgb(213,16,48); color: #fff;}
+.notice { background: rgb(250,205,50);}
