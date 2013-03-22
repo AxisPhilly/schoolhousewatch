@@ -20,7 +20,7 @@ class SchoolsController < ApplicationController
     @school = School.find_by_slug(params[:id])
     @title = @school.name.titleize + " | " + get_app_title
 
-    @news = get_axisphilly_news
+    @news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
 
     respond_to do |format|
       format.html # show.html.erb
