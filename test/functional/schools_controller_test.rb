@@ -2,7 +2,8 @@ require 'test_helper'
 
 class SchoolsControllerTest < ActionController::TestCase
   setup do
-    @school = schools(:one)
+    @school = schools(:one) 
+    print @school
   end
 
   test "should get index" do
