@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
+  def get_app_title 
+    "Schoolhouse Watch"
+  end
+
   def get_all_resources
     gsession = GoogleDrive.login(ENV["GOOGLE_DRIVE_EMAIL"], ENV["GOOGLE_DRIVE_PASSWORD"])
     sheet = gsession.spreadsheet_by_key("0AsiZZJ_cOXiMdEhTVnNGblVYTDBBU1BpQkVxQ09vdVE").worksheets[1]
