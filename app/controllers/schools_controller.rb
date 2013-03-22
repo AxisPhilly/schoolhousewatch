@@ -20,7 +20,7 @@ class SchoolsController < ApplicationController
     @school = School.find_by_slug(params[:id])
     @title = @school.name.titleize + " | School Watch"
 
-    @news = get_all_news.select {|x| x['school'] == @school.slug}
+    @news = get_axisphilly_news
 
     respond_to do |format|
       format.html # show.html.erb
