@@ -2,4 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  meta:
+    defaults:
+      title: "Schoolhouse Watch"
+      description: "Schoolhouse Watch tracks news stories and community events for each of the closing schools and provides a community forum for resue ideas."
+      image_path: "http://axisphilly.org/news/wp-content/themes/ally/images/transparent.png"

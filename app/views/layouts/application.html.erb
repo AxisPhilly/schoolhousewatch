@@ -2,19 +2,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta property="og:site_name" content="AxisPhilly">
-    <meta property="og:url" content="">
-    <meta property="og:type" content="">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
-    <meta property="twitter:site" content="@AxisPhilly">
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="">
-    <meta property="twitter:title" content="">
-    <meta property="twitter:description" content="">
-    <meta property="twitter:creator" content="">
-    <meta property="twitter:image" content="">
+    <meta property="og:site_name" content="<%=t_meta(:title)%>">
+    <meta property="og:url" content="<%= request.url %>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%=@title%>">
+    <meta property="og:description" content="<%=t_meta(:description)%>">
+    <meta property="og:image" content="<%=t_meta(:image_path)%>">
     <link rel="icon" href="http://axisphilly.org/news/wp-content/themes/ally/images/favicon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="http://axisphilly.org/news/wp-content/themes/ally/images/favicon.png" type="image/x-icon" />
     <script type="text/javascript" src="//use.typekit.net/nuc2aoh.js"></script>
