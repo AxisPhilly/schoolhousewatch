@@ -7,3 +7,7 @@ en:
       title: "Schoolhouse Watch"
       description: "Schoolhouse Watch tracks news stories and community events for each of the closing schools and provides a community forum for resue ideas."
       image_path: "http://axisphilly.org/news/wp-content/themes/ally/images/transparent.png"
+
+    schools:
+      show:
+        comment_prompt: "Have ideas for reuse? Comment below"
