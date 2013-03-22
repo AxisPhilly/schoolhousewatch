@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  code: 
-  name: 
-  address: 
-  url: 
-  level: 
+  code: 2034
+  name: Something!
+  address: 123 Main Street
+  url: http://google.com
+  level: 1
   lat: 9.99
   lng: 9.99
-  opa: 
-  mkt_val_2014: 
+  opa: 23
+  mkt_val_2014: $2398
+  slug: something
 
 two:
-  code: 
-  name: 
-  address: 
-  url: 
-  level: 
+  code: 2034
+  name: Something!
+  address: 123 Main Street
+  url: http://google.com
+  level: 1
   lat: 9.99
   lng: 9.99
-  opa: 
-  mkt_val_2014: 
+  opa: 23
+  mkt_val_2014: $2398
+  slug: something

@@ -1,9 +1,11 @@
+require 'devise'
 require 'test_helper'
 
 class SchoolsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @school = schools(:one) 
-    print @school
   end
 
   test "should get index" do
