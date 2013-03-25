@@ -12,8 +12,8 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
     @title = t_meta(:title)
-    @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
-    @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/?post_type=external_post")
+    @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
+    @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
     @resources = get_all_resources
 
     respond_to do |format|
@@ -25,7 +25,7 @@ class SchoolsController < ApplicationController
   # GET /schools/slug
   # GET /schools/slug.json
   def show
-    @school = School.find_by_slug(params[:id])
+    @school = School.find(params[:id])
     @title = @school.name.titleize + " | " + t_meta(:title)
 
     @news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
@@ -49,7 +49,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1/edit
   def edit
-    @school = School.find_by_slug(params[:id])
+    @school = School.find(params[:id])
   end
 
   # POST /schools
