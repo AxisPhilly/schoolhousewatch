@@ -36,6 +36,7 @@
 
   <div id="resources">
     <h6>Resources</h6>
+    <ul>
       <% @resources.each do |story| %>
         <li>
           <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
