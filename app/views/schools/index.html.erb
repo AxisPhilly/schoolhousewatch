@@ -16,7 +16,7 @@
       <% @axp_news.entries.each do |story| %>
         <li>
           <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
-          <em class="source"><%= story.published.strftime('%b. %w, %Y') %></em>
+          <em class="source"><%= story.published.strftime('%b. %e, %Y') %></em>
         </li>
       <% end %>
       </ul>
@@ -28,7 +28,7 @@
       <% @other_news.entries.each do |story| %>
         <li>
           <a href="<%= story.source_url %>" target="_blank"><%= story.title %></a>
-          <em class="source"><%= story.source %>, <%= story.published.strftime('%b. %w, %Y') %></em>
+          <em class="source"><%= story.source %>, <%= story.published.strftime('%b. %e, %Y') %></em>
         </li>
       <% end %>
       </ul>
