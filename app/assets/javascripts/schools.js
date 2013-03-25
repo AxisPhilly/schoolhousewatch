@@ -16,6 +16,8 @@ app.map.run = function() {
         .tilejson(tilejson)
         .on('on', function(o) {});
 
+      L.Icon.Default.imagePath = '/images/';
+
       //add city limits to map
       $.ajax({
         url: '/city_limits.json',
