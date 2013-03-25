@@ -36,22 +36,12 @@
 
   <div id="resources">
     <h6>Resources</h6>
-    <ul>
-<<<<<<< HEAD
-    <% @other_news.entries.each do |story| %>
-      <li>
-        <a href="<%= story.source_url %>" target="_blank"><%= story.title %></a>
-        <em class="source"><%= story.source %>, <%= story.published.strftime('%b. %w, %Y') %></em>
-      </li>
-    <% end %>
-=======
       <% @resources.each do |story| %>
         <li>
           <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
           <em class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></em>
         </li>
       <% end %>
->>>>>>> 250d41e98dc6348fb53af1bb4fde964f83be5c4b
     </ul>
   </div>
 </div>

@@ -1,9 +1,11 @@
+require 'devise'
 require 'test_helper'
 
 class SchoolsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
-    @school = schools(:one) 
-    print @school
+    @school = schools(:one)
   end
 
   test "should get index" do
@@ -13,11 +15,13 @@ class SchoolsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    sign_in User.first
     get :new
     assert_response :success
   end
 
   test "should create school" do
+    sign_in User.first
     assert_difference('School.count') do
       post :create, school: { address: @school.address, code: @school.code, lat: @school.lat, level: @school.level, lng: @school.lng, mkt_val_2014: @school.mkt_val_2014, name: @school.name, opa: @school.opa, url: @school.url }
     end
@@ -26,11 +30,12 @@ class SchoolsControllerTest < ActionController::TestCase
   end
 
   test "should show school" do
-    get :show, id: @school
+    get :show, id: @school.id
     assert_response :success
   end
 
   test "should get edit" do
+    sign_in User.first
     get :edit, id: @school
     assert_response :success
   end
@@ -41,8 +46,9 @@ class SchoolsControllerTest < ActionController::TestCase
   end
 
   test "should destroy school" do
+    sign_in User.first
     assert_difference('School.count', -1) do
-      delete :destroy, id: @school
+      delete :destroy, id: @school.id
     end
 
     assert_redirected_to schools_path

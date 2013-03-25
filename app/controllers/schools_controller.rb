@@ -6,6 +6,7 @@ class SchoolsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
   # GET /schools
   # GET /schools.json
   def index
@@ -21,8 +22,8 @@ class SchoolsController < ApplicationController
     end
   end
 
-  # GET /schools/1
-  # GET /schools/1.json
+  # GET /schools/slug
+  # GET /schools/slug.json
   def show
     @school = School.find_by_slug(params[:id])
     @title = @school.name.titleize + " | " + t_meta(:title)
