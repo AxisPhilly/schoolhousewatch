@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130322192651) do
+ActiveRecord::Schema.define(:version => 20130325230214) do
 
   create_table "schools", :force => true do |t|
     t.string   "code"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130322192651) do
     t.string   "slug"
     t.text     "context"
     t.text     "street_view"
+    t.string   "school_image"
   end
 
   create_table "users", :force => true do |t|
