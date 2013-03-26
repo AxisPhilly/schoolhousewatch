@@ -9,8 +9,8 @@
 
 <section class="row">
   <div class="five columns">
-    <% if @school.school_image.present? %>
-      <% image_tag(@school.school_image_url, :width => 350) %>
+    <% if @school.flickr_image_url.present? && @school.flickr_image.present?%>
+      <%= link_to image_tag(@school.flickr_image_url, :width => 350), @school.flickr_image %>
     <% else %>
       <%= @school.street_view.html_safe %>
     <% end %>

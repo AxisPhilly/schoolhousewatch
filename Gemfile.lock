@@ -33,9 +33,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    carrierwave (0.8.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
     curb (0.8.3)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -142,7 +139,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-postgresql-adapter
-  carrierwave
   devise
   feedzirra (>= 0.2.0.rc2)
   google_drive

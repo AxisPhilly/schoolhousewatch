@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130325230214) do
+ActiveRecord::Schema.define(:version => 20130326145215) do
 
   create_table "schools", :force => true do |t|
     t.string   "code"
@@ -19,16 +19,17 @@ ActiveRecord::Schema.define(:version => 20130325230214) do
     t.string   "address"
     t.string   "url"
     t.string   "level"
-    t.decimal  "lat",          :precision => 6, :scale => 4
-    t.decimal  "lng",          :precision => 6, :scale => 4
+    t.decimal  "lat",              :precision => 6, :scale => 4
+    t.decimal  "lng",              :precision => 6, :scale => 4
     t.string   "opa"
     t.integer  "mkt_val_2014"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "slug"
     t.text     "context"
     t.text     "street_view"
-    t.string   "school_image"
+    t.string   "flickr_image"
+    t.string   "flickr_image_url"
   end
 
   create_table "users", :force => true do |t|
