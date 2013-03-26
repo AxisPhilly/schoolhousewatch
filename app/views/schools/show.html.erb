@@ -1,13 +1,4 @@
 <section class="row">
-  <div class="twelve columns">
-    <ul class="breadcrumbs">
-      <li><a href="/">Schoolhouse Watch</a></li>
-      <li class="current"><a href="#"><%= @school.name.titleize %></a></li>
-    </ul>
-  </div>  
-</section>
-
-<section class="row">
   <div class="five columns">
     <% if @school.flickr_image_url.present? && @school.flickr_image.present?%>
       <%= link_to image_tag(@school.flickr_image_url, :width => 350), @school.flickr_image %>

@@ -13,6 +13,15 @@
  *= require schools
  */
 
+.header .top-bar { max-width: none; padding: 0 20px; margin-top: 10px;}
+.header .top-bar ul>li.name { display: block; }
+.header .top-bar>ul .name h1 a { color: #0e6791; font-weight: bold; line-height: 1.1; }
+.header .top-bar ul>li a:not(.button) { font-size: 18px !important; }
+.top-bar>ul .name h1 > a > em { font-size: 15px; font-weight: normal; }
 .notice, .alert { border-radius: 4px; font-weight: bold; margin: 0; padding-left: 10px;}
 .alert { background: rgb(213,16,48); color: #fff;}
 .notice { background: rgb(250,205,50);}
+
+@media only screen and (max-width: 850px) {
+
+}
