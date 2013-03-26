@@ -1,14 +1,11 @@
-<div class="six columns">
+<section class="row">
+  <div class="six columns">
   <h1 class="headline"><%= @title %></h1>
-  <p>
-    On March 7th, the School Reform commission voted to close 23 Philadelphia Public Schools. What will happen next to these buildings?
-  </p>
-  <p>
-    This project tracks news stories and community events for each of the closing schools, as well as provides a community forum for resue ideas.
-  </p>
-  <p>
-    Have ideas on how we could improve this tool? Send them to <a href="mailto:editor@axisphilly.org">editor@axisphilly.org</a>.
-  </p>
+
+  <div class="byline"><span class="byline-author">by <a href="http://axisphilly.org/author/solomon/" title="Posts by Solomon Jones" rel="author">Solomon Jones</a>, <span class="byline-author"><a href="http://axisphilly.org/author/casey/" title="Posts by Casey Thomas" rel="author">Casey Thomas</a> and <a href="http://axisphilly.org/author/pam/" title="Posts by Pam Selle" rel="author">Pam Selle</a></span> <span class="byline-date">Mar. 27th, 2013</span></div>
+
+  <p>Twenty-three Philadelphia Schools will close at the end of the 2013 school year, saddling already struggling neighborhoods with more empty properties. What will ultimately happen to the school buildings?</p> 
+  <p>This project seeks your input to help answer that question. With news stories, community events and statistics on each closing school, AxisPhilly provides a community forum where you can share your ideas on how each building can be reused.</p>
 
   <div id="axis-news">
     <h6>News from AxisPhilly</h6>
@@ -45,9 +42,9 @@
       <% end %>
     </ul>
   </div>
-</div>
+  </div>
 
-<div class="six columns">
+  <div class="six columns">
   <dl class="tabs">
     <dd class="active"><a href="#list">List</a></dd>
     <dd><a href="#map">Map</a></dd>
@@ -80,7 +77,8 @@
     <h6>Data Sources</h6>
     <p>Data was collected from the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative" target="_blank">Open Data Initiative</a> and <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan" target="_blank">Facilities Master Plan</a>.
   </div>
-</div>
+  </div>
+</section>
 <script type="text/javascript">
 app.map.run();
 </script>
