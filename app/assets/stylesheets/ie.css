@@ -5,3 +5,6 @@
  *= require leaflet.ie
  */
  
+ .nav-container {
+  border-bottom: 1px solid #b0b1b1;
+}

@@ -1,8 +1,35 @@
-// Place all the styles related to the Schools controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Theme overrides
+.header .top-bar {
+  border-bottom: none;
+}
 
-body {
+// Resize menu items {
+.header .top-bar ul>li a:not(.button) {
+  font-size: 18px;
+  color: #7b7a7c;
+}
+
+.header .social i {
+  font-size: 100%;
+}
+
+// App styles
+
+.nav-container {
+  background-color: #f6f5f7;
+  -webkit-box-shadow: 0 1px #b0b1b1;
+  box-shadow: 0 1px #b0b1b1;
+}
+.top-bar {
+  background: transparent;
+}
+  .top-bar .left > .menu-item a:after {
+    content: '/';
+    float: right;
+    font-weight: normal;
+    padding-left: 30px;
+  }
+body, h1 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
