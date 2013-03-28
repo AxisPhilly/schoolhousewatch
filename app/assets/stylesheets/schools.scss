@@ -29,7 +29,16 @@
     font-weight: normal;
     padding-left: 30px;
   }
-body, h1 {
+
+.main-story {
+  font-family: Georgia, serif;
+}
+
+.story-item {
+  margin-bottom: 15px;
+}
+
+body, h1, h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
