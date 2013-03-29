@@ -1,0 +1,12 @@
+<div id="<%= block_id %>">
+  <h6><%= title %></h6>
+    <ul>
+    <% news.entries.each do |story| %>
+      <li class="story-item">
+        <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
+        <br/>
+        <span class="source"><%= story.published.strftime('%b. %e, %Y') %></span>
+      </li>
+    <% end %>
+    </ul>
+</div>

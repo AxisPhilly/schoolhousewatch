@@ -1,6 +1,6 @@
 // Theme overrides
 
-body, h1, h4, h5, h6 {
+body, h1, h3, h4, h5, h6 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -32,4 +32,15 @@ ul {
 
 .label {
   font-size: 14px;
+}
+
+// For table on show page
+.property-values {
+  border: none;
+  tbody tr td {
+    padding: 9px 10px 9px 0;
+  }
+  tbody tr:nth-child(even) {
+    background: #fff;
+  }
 }

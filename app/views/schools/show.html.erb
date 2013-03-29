@@ -1,51 +1,73 @@
 <section class="row">
   <div class="twelve columns">
-    <ul class="breadcrumbs">
-      <li><a href="/">Schoolhouse Watch</a></li>
-      <li class="current"><a href="#"><%= @school.name.titleize %></a></li>
+    <ul>
+      <li><a href="/">&larr; Schoolhouse Watch</a></li>
     </ul>
   </div>  
 </section>
 
 <section class="row">
-  <div class="five columns">
+  <div class="six columns">
+    <h3><%= @school.name.titleize %></h3>
+    <table class="property-values">
+      <tr>
+        <td>
+          <strong>Address</strong>
+        </td>
+        <td>
+          <%= @school.address %>
+        </td>
+      </tr>
+      <% if @school.url? %>
+        <tr>
+          <td>
+            <strong>Online</strong>
+          </td>
+          <td>
+            <%= link_to 'Website', @school.url %>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>
+          <strong>Grade</strong>
+        </td>
+        <td>
+          <%= @school.level.titleize %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>OPA Account</strong>
+        </td>
+        <td>
+          <%= @school.opa %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>2014 Market Value</strong>
+        </td>
+        <td>
+          <% if @school.mkt_val_2014 != -1 %>
+            <%= number_to_currency(@school.mkt_val_2014, :precision => 0) %>
+          <% else %>
+            This property has not yet been reassessed under AVI.
+          <% end %>
+        </td>
+      </tr>
+    </table>
+    
+    <%= render 'news', :news => @news, :title => 'Latest Updates', :block_id => 'latest-updates' %>
+    <%= render 'resources' %>
+  </div>
+
+  <div class="six columns">
     <% if @school.flickr_image_url.present? && @school.flickr_image.present?%>
       <%= link_to image_tag(@school.flickr_image_url, :width => 350), @school.flickr_image %>
     <% else %>
       <%= @school.street_view.html_safe %>
     <% end %>
-    <h5><%= @school.name %></h5>
-    <ul>
-      <li>
-        <%= @school.address %>
-      </li>
-        <% if @school.url? %>
-          <li>
-            <%= link_to 'Website', @school.url %>
-          </li>
-        <% end %>
-      <li>
-        <%= @school.level.titleize %>
-      </li>
-      <li>
-        OPA Account:
-        <%= @school.opa %>
-      </li>
-      <li>
-        <% if @school.mkt_val_2014 != -1 %>
-          2014 Market Value: <%= number_to_currency(@school.mkt_val_2014, :precision => 0) %>
-        <% else %>
-          This property has not yet been reassessed under AVI.
-        <% end %>
-      </li>
-    </ul>
-    
-    <div id="news">
-      
-    </div>
-  </div>
-
-  <div class="seven columns">
     <div id="comments">
       <h5><%= t_meta(:comment_prompt) %></h5>
       <div id="disqus_thread"></div>

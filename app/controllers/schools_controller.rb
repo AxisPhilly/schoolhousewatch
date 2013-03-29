@@ -28,7 +28,8 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     @title = @school.name.titleize + " | " + t_meta(:title)
 
-    @news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/school-buildings/feed/")
+    @news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
+    @resources = get_all_resources
 
     respond_to do |format|
       format.html # show.html.erb

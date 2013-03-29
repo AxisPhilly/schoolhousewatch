@@ -1,0 +1,12 @@
+<div id="resources">
+  <h6>Resources</h6>
+  <ul>
+    <% @resources.each do |story| %>
+      <li class="story-item">
+        <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+        <br/>
+        <span class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
