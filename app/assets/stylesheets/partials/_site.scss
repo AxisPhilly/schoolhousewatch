@@ -4,9 +4,8 @@
   background-color: #f6f5f7;
   -webkit-box-shadow: 0 1px #b0b1b1;
   box-shadow: 0 1px #b0b1b1;
-}
-.top-bar {
-  background: transparent;
+  height: 60px;
+  padding: 5px 0;
 }
   .top-bar .left > .menu-item a:after {
     content: '/';
