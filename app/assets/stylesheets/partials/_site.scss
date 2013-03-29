@@ -1,0 +1,48 @@
+// App styles
+
+.nav-container {
+  background-color: #f6f5f7;
+  -webkit-box-shadow: 0 1px #b0b1b1;
+  box-shadow: 0 1px #b0b1b1;
+}
+.top-bar {
+  background: transparent;
+}
+  .top-bar .left > .menu-item a:after {
+    content: '/';
+    float: right;
+    font-weight: normal;
+    padding-left: 30px;
+  }
+
+.main-story {
+  font-family: Georgia, serif;
+}
+
+.story-item {
+  margin-bottom: 15px;
+}
+
+  .source {
+    font-size: 14px;
+    color: #777;
+  }
+
+.find-school {
+  // background-image: magnifying-glass
+}
+
+#map-div {
+  height: 525px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.leaflet-top {
+  z-index: 100;
+}
+
+#data-sources {
+  padding: 2px 16px;
+  background-color: #F0F0F0;
+}

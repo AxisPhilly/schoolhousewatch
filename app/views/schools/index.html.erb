@@ -50,38 +50,40 @@
   </div>
 
   <div class="six columns">
-  <dl class="tabs">
-    <dd class="active"><a href="#list">List</a></dd>
-    <dd><a href="#map">Map</a></dd>
-  </dl>
-  <ul class="tabs-content">
-    <li id="mapTab">
-      <div id="map-div"></div>
-    </li>
-    <li class="active" id="listTab">
-      <table class="twelve">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-          </tr>
-        </thead>
+    <img class="mtl" src="<%= root_url %>/images/homepage-school.png" />
+    <h6 class="find-school">Find Your School</h6>
+    <dl class="tabs">
+      <dd class="active"><a href="#list">List</a></dd>
+      <dd><a href="#map">Map</a></dd>
+    </dl>
+    <ul class="tabs-content">
+      <li id="mapTab">
+        <div id="map-div"></div>
+      </li>
+      <li class="active" id="listTab">
+        <table class="twelve">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+            </tr>
+          </thead>
 
-        <% @schools.each do |school| %>
-          <tr>
-            <td><%= link_to school.name.titleize, '/schools/' + school.slug %></td>
-            <td><%= school.address.titleize %></td>
-          </tr>
-        <% end %>
+          <% @schools.each do |school| %>
+            <tr>
+              <td><%= link_to school.name.titleize, '/schools/' + school.slug %></td>
+              <td><%= school.address.titleize %></td>
+            </tr>
+          <% end %>
 
-      </table>
-    </li>
-  </ul>
+        </table>
+      </li>
+    </ul>
 
-  <div id="data-sources">
-    <h6>Data Sources</h6>
-    <p>Data was collected from the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative" target="_blank">Open Data Initiative</a> and <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan" target="_blank">Facilities Master Plan</a>.
-  </div>
+    <div id="data-sources">
+      <h6>Data Sources</h6>
+      <p>Data was collected from the School District's <a href="http://webgui.phila.k12.pa.us/offices/a/accountability/open-data-initiative" target="_blank">Open Data Initiative</a> and <a href="http://webgui.phila.k12.pa.us/offices/f/facilities-master-plan" target="_blank">Facilities Master Plan</a>.
+    </div>
   </div>
 </section>
 <script type="text/javascript">

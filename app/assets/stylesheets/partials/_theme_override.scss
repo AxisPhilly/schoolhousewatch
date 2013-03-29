@@ -1,0 +1,35 @@
+// Theme overrides
+
+body, h1, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header .top-bar {
+  border-bottom: none;
+}
+
+.top-bar, .header .top-bar ul>li:hover {
+  background: transparent;
+}
+
+// Resize menu items {
+.header .top-bar ul>li a:not(.button) {
+  font-size: 18px;
+  color: #7b7a7c;
+}
+
+.header .social i {
+  font-size: 100%;
+}
+
+ul {
+  list-style-type: none;
+  
+  li {
+    font-size: 16px;
+  }
+}
+
+.label {
+  font-size: 14px;
+}
