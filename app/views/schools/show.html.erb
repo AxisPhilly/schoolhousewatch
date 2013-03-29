@@ -69,7 +69,10 @@
       <%= @school.street_view.html_safe %>
     <% end %>
     <div id="comments">
-      <h5><%= t_meta(:comment_prompt) %></h5>
+      <div class="pre-discussion">
+        <span class="area-header">Discussion</span>
+        <h6 class="mtn"><%= t_meta(:comment_prompt) %></h6>
+      </div>
       <div id="disqus_thread"></div>
     </div>
   </div>
