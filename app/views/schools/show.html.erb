@@ -7,7 +7,7 @@
 </section>
 
 <section class="row">
-  <div class="six columns">
+  <div class="six columns main">
     <h3><%= @school.name.titleize %></h3>
     <table class="property-values">
       <tr>
@@ -58,8 +58,10 @@
       </tr>
     </table>
     
+    <hr>
+
+    <h6>Latest Updates</h6>
     <%= render 'news', :news => @news, :title => 'Latest Updates', :block_id => 'latest-updates' %>
-    <%= render 'resources' %>
   </div>
 
   <div class="six columns">
