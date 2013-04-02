@@ -64,7 +64,7 @@
     <%= render 'news', :news => @news, :title => 'Latest Updates', :block_id => 'latest-updates' %>
   </div>
 
-  <div class="six columns">
+  <div class="six columns sidebar">
     <% if @school.flickr_image_url.present? && @school.flickr_image.present?%>
       <%= link_to image_tag(@school.flickr_image_url, :width => 350), @school.flickr_image %>
     <% else %>
