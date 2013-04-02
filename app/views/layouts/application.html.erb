@@ -32,13 +32,6 @@
               <li class="name">
                 <a href="http://www.axisphilly.org"><img class="compressed-logo" alt="AxisPhilly: Where News Breaks Through" src="http://axisphilly.org/news/wp-content/themes/ally/images/logo.png"/>AxisPhilly</a>
               </li>
-              <li class="toggle-topbar has-button">
-                <span class="tiny secondary button menu-button">
-                  <span class="line"></span>
-                  <span class="line"></span>
-                  <span class="line"></span>
-                </span>
-              </li>
             </ul>
             <section>
               <ul class="left">
@@ -47,9 +40,6 @@
                 <li class="menu-item" ><a href="http://www.axisphilly.org/tools">Tools &amp; Data</a></li>
                 <li class="menu-item"><a href="http://www.axisphilly.org/about">About</a></li>
                 <li class="search">
-                <li class="social"><a href="http://www.twitter.com/AxisPhilly"><i class="social-foundicon-twitter"></i></a></li>
-                <li class="social"><a href="http://www.facebook.com/AxisPhilly"><i class="social-foundicon-facebook"></i></a></li>
-                <li class="social"><a href="http://www.axisphilly.org/?feed=rss"><i class="social-foundicon-rss"></i></a></li>
                 <% if user_signed_in? %>
                   <li><%= link_to "Logout", destroy_user_session_path %></li>
                 <% end %>

@@ -18,6 +18,14 @@ body, h1, h3, h4, h5, h6 {
   color: #7b7a7c;
 }
 
+.header .top-bar ul>li.name {
+  background: #f6f5f7;
+
+  @media(max-width: 850px) {
+    display: block;
+  }
+}
+
 .header .social i {
   font-size: 100%;
 }
