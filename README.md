@@ -15,7 +15,7 @@ Add your environment variables.
     export GOOGLE_DRIVE_EMAIL="your@email.com"
     export GOOGLE_DRIVE_PASSWORD="yoursecretpassword"
 
-Then, to quit VIM, type `:wq`
+Then, to quit VIM, type `:wq` and hit enter.
 
 Don't forget to load the variables by `source` 
 
