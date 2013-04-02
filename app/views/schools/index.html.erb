@@ -1,5 +1,5 @@
 <section class="row">
-  <div class="six columns">
+  <div class="six columns main">
     <div class="main-story">
       <h1 class="headline"><%= @title %></h1>
       <div class="byline"><span class="byline-author">by <a href="http://axisphilly.org/author/solomon/" title="Posts by Solomon Jones" rel="author">Solomon Jones</a>, <span class="byline-author"><a href="http://axisphilly.org/author/casey/" title="Posts by Casey Thomas" rel="author">Casey Thomas</a> and <a href="http://axisphilly.org/author/pam/" title="Posts by Pam Selle" rel="author">Pam Selle</a></span> <span class="byline-date">Mar. 27th, 2013</span></div>
@@ -9,10 +9,11 @@
       <p>This project seeks your input to help answer that question. With news stories, community events and statistics on each closing school, AxisPhilly provides a community forum where you can share your ideas on how each building can be reused.</p>
     </div>
 
-  <%= render 'news', :news => @axp_news, :title => 'News from AxisPhilly', :block_id => 'axis-news' %>
+  <hr>
+  <h6>Latest Updates</h6>
+  <%= render 'news', :news => @news, :block_id => 'news' %>
 
-  <%= render 'news', :news => @other_news, :title => 'News from other organizations', :block_id => 'other-news' %>
-
+  <hr>
   <%= render 'resources' %>
   </div>
 

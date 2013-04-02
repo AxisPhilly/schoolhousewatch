@@ -14,6 +14,7 @@ class SchoolsController < ApplicationController
     @title = t_meta(:title)
     @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
     @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
+    @news = combine_news(@axp_news, @other_news)
     @resources = get_all_resources
 
     respond_to do |format|

@@ -30,4 +30,28 @@ module ApplicationHelper
       interpolation_data.merge({ :default => t("meta.defaults.#{name}") }))
   end
 
+  def combine_news(axis_feed, other_feed)
+    combined = Array.new
+
+    axis_feed.entries.each do |story|
+      combined.push({
+        :url => story.url,
+        :title => story.title,
+        :source => 'AxisPhilly',
+        :published => story.published
+      })
+    end
+
+    other_feed.entries.each do |story|
+      combined.push({
+        :url => story.source_url,
+        :title => story.title,
+        :source => story.source,
+        :published => story.published
+      })
+    end
+
+    combined.sort_by! { |k| k[:published] }.reverse!
+  end
+
 end

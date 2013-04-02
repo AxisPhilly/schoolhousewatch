@@ -3,9 +3,10 @@
   <ul>
     <% @resources.each do |story| %>
       <li class="story-item">
-        <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-        <br/>
-        <span class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></span>
+        <div>
+          <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+          <span class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></span>
+        </div>
       </li>
     <% end %>
   </ul>

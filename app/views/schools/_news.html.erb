@@ -1,11 +1,11 @@
 <div id="<%= block_id %>">
-  <h6><%= title %></h6>
     <ul>
-    <% news.entries.each do |story| %>
-      <li class="story-item">
-        <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
-        <br/>
-        <span class="source"><%= story.published.strftime('%b. %e, %Y') %></span>
+    <% news.each do |story| %>
+      <li class="story-item <% if story[:source] == 'AxisPhilly' %>axis-story<% end %>">
+        <div>
+          <a href="<%= story[:url] %>" target="_blank"><%= story[:title] %></a>
+          <span class="source"><%= story[:source] %>, <%= story[:published].strftime('%b. %e, %Y') %></span>
+        </div>
       </li>
     <% end %>
     </ul>
