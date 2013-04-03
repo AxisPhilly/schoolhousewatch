@@ -18,6 +18,12 @@ app.map.run = function() {
 
       L.Icon.Default.imagePath = '/images/';
 
+      // tabbed map fix hack
+      $("#mapTabHeader").click(function() {
+        // http://stackoverflow.com/questions/10762984/leaflet-map-not-displayed-properly-inside-tabbed-panel
+        L.Util.requestAnimFrame(map.invalidateSize, map, !1, map._container);
+      });
+
       //add city limits to map
       $.ajax({
         url: '/city_limits.json',
