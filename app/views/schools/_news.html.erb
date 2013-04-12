@@ -1,12 +1,16 @@
 <div id="<%= block_id %>">
     <ul>
-    <% news.each do |story| %>
-      <li class="story-item <% if story[:source] == 'AxisPhilly' %>axis-story<% end %>">
-        <div>
-          <a href="<%= story[:url] %>" target="_blank"><%= story[:title] %></a>
-          <span class="source"><%= story[:source] %>, <%= story[:published].strftime('%b. %e, %Y') %></span>
-        </div>
-      </li>
+    <% if @news %>
+      <% news.each do |story| %>
+        <li class="story-item <% if story[:source] == 'AxisPhilly' %>axis-story<% end %>">
+          <div>
+            <a href="<%= story[:url] %>" target="_blank"><%= story[:title] %></a>
+            <span class="source"><%= story[:source] %>, <%= story[:published].strftime('%b. %e, %Y') %></span>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      <li><em>We're having trouble retrieving updates at the moment.</em></li>
     <% end %>
     </ul>
 </div>

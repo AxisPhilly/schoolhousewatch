@@ -12,10 +12,20 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
     @title = t_meta(:title)
-    @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
-    @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
-    @news = combine_news(@axp_news, @other_news)
-    @resources = get_all_resources
+
+    begin
+      @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
+      @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
+      @news = combine_news(@axp_news, @other_news)
+    rescue
+      @news = false
+    end
+
+    begin 
+      @resources = get_all_resources
+    rescue
+      @resources = false
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,10 +39,13 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     @title = @school.name.titleize + " | " + t_meta(:title)
 
-    @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
-    @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
-    @news = combine_news(@axp_news, @other_news)
-    @resources = get_all_resources
+    begin
+      @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
+      @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
+      @news = combine_news(@axp_news, @other_news)
+    rescue
+      @news = false
+    end
 
     respond_to do |format|
       format.html # show.html.erb

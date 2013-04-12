@@ -1,13 +1,17 @@
 <div id="resources">
   <h6>Resources</h6>
   <ul>
-    <% @resources.each do |story| %>
-      <li class="story-item">
-        <div>
-          <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
-          <span class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></span>
-        </div>
-      </li>
+    <% if @resources %>
+      <% @resources.each do |story| %>
+        <li class="story-item">
+          <div>
+            <a href="<%= story['url'] %>" target="_blank"><%= story['headline'] %></a>
+            <span class="source"><% if story['source'] != '' %><%= story['source'] %>, <% end %> <%= story['date'] %></span>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      <li><em>We're having trouble retrieving resources at the moment.</em></li>
     <% end %>
   </ul>
 </div>
