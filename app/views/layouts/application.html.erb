@@ -39,17 +39,12 @@
                 <li class="menu-item"><a href="http://axisphilly.org/projects/">Our Projects</a></li>
                 <li class="menu-item" ><a href="http://www.axisphilly.org/tools">Tools &amp; Data</a></li>
                 <li class="menu-item"><a href="http://www.axisphilly.org/about">About</a></li>
-                <li class="search">
+                <li class="social"><a href="http://www.twitter.com/AxisPhilly"><i class="social-foundicon-twitter"></i></a></li>
+                <li class="social"><a href="http://www.facebook.com/AxisPhilly"><i class="social-foundicon-facebook"></i></a></li>
+                <li class="social"><a href="http://www.axisphilly.org/?feed=rss"><i class="social-foundicon-rss"></i></a></li>
                 <% if user_signed_in? %>
                   <li><%= link_to "Logout", destroy_user_session_path %></li>
                 <% end %>
-              </ul>
-              <ul class="right">
-                <li class="search">
-                  <form class="collapse" role="search" method="get" id="searchform" action="http://axisphilly.org">
-                    <input type="search" placeholder="Search" name="s" id="s">
-                  </form>
-                </li>
               </ul>
             </section>
           </nav>
