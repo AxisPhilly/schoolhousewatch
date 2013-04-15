@@ -60,6 +60,9 @@
     
     <hr>
     <div id="comments" class="pull-four-mobile">
+      <% if !@school.context.nil? %>
+        <%= @school.context.html_safe %>
+      <% end %>
       <div class="pre-discussion">
         <span class="area-header">Discussion</span>
         <h6 class="mtn"><%= t_meta(:comment_prompt) %></h6>
