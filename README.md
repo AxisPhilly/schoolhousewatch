@@ -1,11 +1,11 @@
-# School Watch
+# Schoolhouse Watch
 
-School Watch is a news application to share data about the 23 public schools
-closing in the School District of Philadelphia in 2013.
+Schoolhouse Watch is a news application to share data about the 22 public schools
+slated to close in the School District of Philadelphia in 2013.
 
 ## Setting up locally
 
-School Watch pulls its "resources" from a google spreadsheet, so 
+Schoolhouse Watch pulls its "resources" from a google spreadsheet, so 
 you need to add environment variables for your Google account.
 
     $ vi .env
