@@ -1,8 +1,10 @@
 <section class="row">
   <div class="six columns main">
     <div class="main-story">
+      <img class="mtl show-for-small" src="<%= root_url %>/images/homepage-school.png" />
       <h1 class="headline"><%= @title %></h1>
       <div class="byline"><span class="byline-author">by <a href="http://axisphilly.org/author/solomon/" title="Posts by Solomon Jones" rel="author">Solomon Jones</a>, <span class="byline-author"><a href="http://axisphilly.org/author/casey/" title="Posts by Casey Thomas" rel="author">Casey Thomas</a> and <a href="http://axisphilly.org/author/pam/" title="Posts by Pam Selle" rel="author">Pam Selle</a></span> <span class="byline-date">Apr. 16th, 2013</span></div>
+      <p class="partner show-for-small">With editorial support by <a href="http://www.thenotebook.org" target="_blank">The Notebook</a></p>
 
       <p>Twenty-two Philadelphia school buildings are slated to close at the end of the 2013 school year, saddling already struggling neighborhoods with more empty properties. What will ultimately happen to the school buildings?</p> 
       
@@ -21,7 +23,10 @@
   </div>
 
   <div class="six columns sidebar">
-    <img class="mtl" src="<%= root_url %>/images/homepage-school.png" />
+    <p class="partner">With editorial support by:</p>
+    <a href="http://thenotebook.org/" target="_blank" alt="The Public School Notebook"><img src="/images/notebook_logo.png"></a>
+
+    <img class="mtl hide-for-small" src="<%= root_url %>/images/homepage-school.png" />
     <h6 class="find-school mls">Find Your School</h6>
     <dl class="tabs">
       <dd class="active"><a href="#list">List</a></dd>

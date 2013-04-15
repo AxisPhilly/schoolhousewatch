@@ -15,6 +15,10 @@
   }
 
 .main {
+  img {
+    padding: 0 20px;
+  }
+
   .headline {
     padding: 0 20px;
   }
@@ -94,6 +98,11 @@
 
 .description p {
   font-size: 14px;
+}
+
+.partner {
+  font-size: 14px;
+  color: #666;
 }
 
 .pre-discussion {
