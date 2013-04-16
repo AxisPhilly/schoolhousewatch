@@ -1,7 +1,7 @@
 <div id="<%= block_id %>">
     <ul>
     <% if @news %>
-      <% news[1..10].each do |story| %>
+      <% news[1..5].each do |story| %>
         <li class="story-item <% if story[:source] == 'AxisPhilly' %>axis-story<% end %>">
           <div>
             <a href="<%= story[:url] %>" target="_blank"><%= story[:title] %></a>
