@@ -4,10 +4,12 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   def get_all_resources
-    gsession = GoogleDrive.login(ENV["GOOGLE_DRIVE_EMAIL"], ENV["GOOGLE_DRIVE_PASSWORD"])
-    sheet = gsession.spreadsheet_by_key("0AsiZZJ_cOXiMdEhTVnNGblVYTDBBU1BpQkVxQ09vdVE").worksheets[1]
-    
-    resources = gsheet_to_hash(sheet)
+    Rails.cache.fetch('allresources', :expires_in => 5.minutes) do 
+      gsession = GoogleDrive.login(ENV["GOOGLE_DRIVE_EMAIL"], ENV["GOOGLE_DRIVE_PASSWORD"])
+      sheet = gsession.spreadsheet_by_key("0AsiZZJ_cOXiMdEhTVnNGblVYTDBBU1BpQkVxQ09vdVE").worksheets[1]
+
+      resources = gsheet_to_hash(sheet)
+    end
   end
 
 end

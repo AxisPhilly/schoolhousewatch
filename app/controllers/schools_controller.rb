@@ -8,14 +8,14 @@ class SchoolsController < ApplicationController
     @schools = School.all
     @title = t_meta(:title)
 
-    begin 
-      @resources = get_all_resources
-    rescue
-      @resources = false
-    end
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html do
+        begin 
+          @resources = get_all_resources
+        rescue
+          @resources = false
+        end
+      end
       format.json { render json: @schools }
     end
   end

@@ -17,3 +17,6 @@ gem 'feedzirra', '>= 0.2.0.rc2'
 gem 'devise'
 
 gem 'unicorn'
+
+gem 'quiet_assets', :group => :development
+gem 'dalli'
