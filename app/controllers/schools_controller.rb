@@ -1,25 +1,12 @@
 class SchoolsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
-
-  def authenticate
-    if !user_signed_in?
-      redirect_to new_user_session_path
-    end
-  end
+  before_filter :get_feeds, :only => [:index, :show]
 
   # GET /schools
   # GET /schools.json
   def index
     @schools = School.all
     @title = t_meta(:title)
-
-    begin
-      @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
-      @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
-      @news = combine_news(@axp_news, @other_news)
-    rescue
-      @news = false
-    end
 
     begin 
       @resources = get_all_resources
@@ -38,14 +25,6 @@ class SchoolsController < ApplicationController
   def show
     @school = School.find(params[:id])
     @title = @school.name.titleize + " | " + t_meta(:title)
-
-    begin
-      @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
-      @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
-      @news = combine_news(@axp_news, @other_news)
-    rescue
-      @news = false
-    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -112,4 +91,22 @@ class SchoolsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def authenticate
+      if !user_signed_in?
+        redirect_to new_user_session_path
+      end
+    end
+
+    def get_feeds
+      begin
+        @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
+        @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
+        @news = combine_news(@axp_news, @other_news)
+      rescue
+        @news = false
+      end
+    end
 end

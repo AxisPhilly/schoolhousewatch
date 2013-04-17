@@ -1,10 +1,10 @@
 <div id="<%= block_id %>">
     <ul>
     <% if @news %>
-      <% news[1..5].each do |story| %>
+      <% news.first(5).each do |story| %>
         <li class="story-item <% if story[:source] == 'AxisPhilly' %>axis-story<% end %>">
           <div>
-            <a href="<%= story[:url] %>" target="_blank"><%= story[:title] %></a>
+            <%= link_to(story[:title], story[:url], :target => '_blank') %>
             <span class="source"><%= story[:source] %>, <%= story[:published].strftime('%b. %e, %Y') %></span>
           </div>
         </li>
