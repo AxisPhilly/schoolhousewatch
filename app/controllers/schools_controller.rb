@@ -103,7 +103,7 @@ class SchoolsController < ApplicationController
     def get_feeds
       begin
         @axp_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/")
-        @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/feed/?post_type=external_post")
+        @other_news = Feedzirra::Feed.fetch_and_parse("http://axisphilly.org/project/shuttered-school-buildings/?post_type=external_post&feed=rss")
         @news = combine_news(@axp_news, @other_news)
       rescue
         @news = false
