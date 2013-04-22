@@ -13,7 +13,6 @@ end
 gem 'pg'
 gem 'activerecord-postgresql-adapter'
 gem 'google_drive'
-gem 'feedzirra', '>= 0.2.0.rc2'
 gem 'devise'
 
 gem 'unicorn'
