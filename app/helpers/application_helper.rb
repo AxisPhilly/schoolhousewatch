@@ -33,21 +33,21 @@ module ApplicationHelper
   def combine_news(axis_feed, other_feed)
     combined = Array.new
 
-    axis_feed.entries.each do |story|
+    axis_feed.items.each do |story|
       combined.push({
-        :url => story.url,
+        :url => story.link,
         :title => story.title,
         :source => 'AxisPhilly',
-        :published => story.published
+        :published => story.pubDate
       })
     end
 
-    other_feed.entries.each do |story|
+    other_feed.items.each do |story|
       combined.push({
-        :url => story.source_url,
+        :url => story.source.url,
         :title => story.title,
-        :source => story.source,
-        :published => story.published
+        :source => story.source.content,
+        :published => story.pubDate
       })
     end
 
